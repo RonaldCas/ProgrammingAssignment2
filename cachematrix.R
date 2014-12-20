@@ -12,9 +12,9 @@ makeCacheMatrix <- function(x = matrix()) {
 	setData <- function(y)		# setting (new) matrix
 	{
 		x <<- y
-		inverse <<- NULL		# y is a new matrix, so inverse is not yet known
+		inverse <<- NULL			# y is a new matrix, so inverse is not yet known
 	}
-	getData <- function()		# retrieve matrix
+	getData <- function()			# retrieve matrix
 	{
 		x					# return matrix	
 	}
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
 	{
 		inverse <<- inv
 	}
-	getInverse <- function()	# retrieve inverse matrix (if present)
+	getInverse <- function()		# retrieve inverse matrix (if present)
 	{
 		inverse
 	}
@@ -60,9 +60,9 @@ cacheSolve <- function(y, ...)
 		return(inv)
 	}
 	# inverse was not cached and has to be calculated
-	data <- y$get() 			# get matrix data
+	data <- y$get() 				# get matrix data
 	inv <- solve(data,...)		# calculate inverse
 	y$setInv(inv)				# cache inverse
 	
-	inv						# return inverse matrix	
+	inv							# return inverse matrix	
 }
